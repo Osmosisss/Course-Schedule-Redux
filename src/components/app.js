@@ -4,9 +4,14 @@ import CourseLibrary from './courselibrary';
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <h1>Course Library</h1>
+      <div className="main-container">
+        <div className="library">
+        <h1 className="library-header">Course Library</h1>
         <CourseLibrary/>
+        </div>
+        <div className="schedule">
+          <h1 className="schedule-header">My Schedule</h1>
+        </div>
       </div>
     );
   }
