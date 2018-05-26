@@ -1,6 +1,7 @@
 import { 
     FETCH_COURSES,
-    REMOVE_COURSE
+    REMOVE_COURSE,
+    ADD_COURSE
 } from './types';
 
 export function fetchCourses() {

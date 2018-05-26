@@ -22,7 +22,7 @@ class CourseLibrary extends Component {
                 <div className="course-title-container">
                     <div className="course-title">{course.title}</div>
                 </div>
-                <a >Arrow</a>
+                <a>Arrow</a>
                 <a className={`action ${course.enrolled ? 'hide-content' : 'show-content'}`} onClick={() => this.props.addCourse(course)}>Add</a>
                 <a className={`action ${course.enrolled ? 'show-content' : 'hide-content'}`} onClick={() => this.props.removeCourse(course)}>Remove</a>
             </div>
@@ -54,10 +54,10 @@ function mapDispatchToProps(dispatch) {
         fetchCourses:()=> {
             dispatch(fetchCourses())
         },
-        addCourse:()=> {
+        addCourse:(course)=> {
             dispatch(addCourse(course))
         },
-        removeCourse:()=> {
+        removeCourse:(course)=> {
             dispatch(removeCourse(course))
         }
     }
