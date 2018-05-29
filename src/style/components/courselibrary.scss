@@ -92,6 +92,7 @@
         display: block;
         background-color: white;
         @include position-center;
+        transition: all .3s ease;
     }
 
     &:before {
@@ -110,9 +111,10 @@
 
 .course-remove {
     @include add-button;
+    // transform: rotate(45deg);
 
     &:before {
-        transform: translate(-50%,-50%) rotate(45deg);
+        transform: translate(-50%,-50%) rotate(-135deg);
     }
 
     &:after {
