@@ -8,6 +8,10 @@ class Schedule extends Component {
         super(props)
 
         this.renderCourse = this.renderCourse.bind(this);
+
+        this.state = {
+            enrolled: []
+        }
     }
 
     renderCourse(course) {
@@ -19,12 +23,30 @@ class Schedule extends Component {
         )
     }
 
+    componentWillReceiveProps(nextProps) {
+        var newEnrolled = []
+
+        this.state.enrolled.map((course) => {
+            if(course.enrolled) {
+                newEnrolled.push (course);
+            }
+        })
+        nextProps.courses.map((course) => {
+            if(course.enrolled && !newEnrolled.includes(course)) {
+                newEnrolled.push(course)
+            }
+        })
+        this.setState({
+            enrolled: newEnrolled
+        })
+    }
+
     render() {
         return (
             <div>
                 <div className="schedule-slots">
                     {
-                        this.props.courses.map(this.renderCourse)
+                        this.state.enrolled.map(this.renderCourse)
                     }    
                 </div>
             </div>
@@ -33,7 +55,13 @@ class Schedule extends Component {
 }
 
 function mapStateToProps (state) {
-    return { courses: state.courses };
+    var enrolledCourses = []
+    state.courses.map((course) => {
+        if(course.enrolled) {
+            enrolledCourses.push(course)
+        }
+    })
+    return { courses: enrolledCourses };
 }
 
 function mapDispatchToProps(dispatch) {
