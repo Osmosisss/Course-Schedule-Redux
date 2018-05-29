@@ -2,20 +2,6 @@
     margin-top: 65px;
 }
 
-.slot-course {
-    background-color: white;
-    color: black;
-    border: 1px solid rgba(255,255,255,0.6);
-}
-
-.slot-empty {
-    opacity: 0.75;
-    background-color: transparent;
-    border: 1px solid rgba(255,255,255,0.6);
-    border-style: dashed;
-    color: white;
-}
-
 .slot {
     margin: 20px auto;
     height: 55px;
@@ -26,5 +12,40 @@
         font-family: 'Lato';
         font-size: 16px;
         padding: 4px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
+}
+
+.slot-empty {
+    opacity: 0.75;
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-style: dashed;
+    color: white;
+    font-family: 'Alegreya';
+}
+
+.slot-course {
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(255,255,255,0.6);
+    transition: all .3s ease;
+}
+
+.action {
+    opacity: 0;
+}
+.slot-course:hover {
+    action {
+        opacity: 1;
+    }
+}
+
+.slot-course:hover {
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.21);
+    transform: scale(1.05);
+    transition: all .3s ease;   
 }
