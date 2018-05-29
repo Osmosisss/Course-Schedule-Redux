@@ -29,7 +29,7 @@ class Schedule extends Component {
         this.state.enrolled.map((course) => {
             if(course.enrolled) {
                 newEnrolled.push (course);
-            }
+            } 
         })
         nextProps.courses.map((course) => {
             if(course.enrolled && !newEnrolled.includes(course)) {
